@@ -3,16 +3,16 @@ import styled from "styled-components";
 
 function Stats(props) {
   return (
-    <StatsHolder>
-      <EachStat>
+    <StatsHolder modeStatus={props.modeStatus}>
+      <EachStat modeStatus={props.modeStatus}>
         <h6>Repos</h6>
         <p>{props.info.public_repos}</p>
       </EachStat>
-      <EachStat>
+      <EachStat modeStatus={props.modeStatus}>
         <h6>Followers</h6>
         <p>{props.info.followers}</p>
       </EachStat>
-      <EachStat>
+      <EachStat modeStatus={props.modeStatus}>
         <h6>Following</h6>
         <p>{props.info.following}</p>
       </EachStat>
@@ -25,7 +25,7 @@ export default Stats;
 const StatsHolder = styled.div`
     display: flex;
     justify-content: space-evenly;
-    background-color: #F6F8FF;
+    background-color: ${(props)=> (props.modeStatus ? "#141D2F" : "#F6F8FF")} ;
     border-radius: 10px;
     width: 280px;
     height: 85px;
@@ -38,13 +38,13 @@ const EachStat = styled.div`
     align-items: center;
     justify-content: space-evenly;
     &>h6{
-        color: #4B6A9B;
+        color: ${(props)=> (props.modeStatus ? "#FFF": "#4B6A9B")};
         font-size: 11px;
         font-weight: 400;
         line-height: 16px;
     }
     &>p{
-       color:#2B3442;
+       color: ${(props)=> (props.modeStatus ? "#FFF" : "#2B3442")};
        font-size: 16px;
        font-weight: 700;
        line-height: 24px;

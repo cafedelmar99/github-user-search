@@ -6,12 +6,13 @@ import styled from "styled-components";
 
 function Card(props) {
   return (
-    <CardHolder>
+    <CardHolder modeStatus={props.modeStatus}>
       {props.info.created_at === undefined ? (
-        <></>
+        <>
+        </>
       ) : (
         <>
-          <MainInfo info={props.info}>
+          <MainInfo modeStatus={props.modeStatus} info={props.info}>
             <img src={props.info.avatar_url} alt="" />
             <div>
               <h3>{props.info.name}</h3>
@@ -34,7 +35,7 @@ function Card(props) {
             </div>
           </MainInfo>
           <Description>
-            <p></p>
+            <p>{props.info.bio}</p>
           </Description>
           <Stats modeStatus={props.modeStatus} info={props.info}/>
           <Socials modeStatus={props.modeStatus} info={props.info}/>
@@ -47,11 +48,10 @@ function Card(props) {
 export default Card;
 
 const CardHolder = styled.div`
-  height: 517px;
-  background-color: #fff;
+  background-color: ${(props) => (props.modeStatus ? "#1E2A47" : "#FFF")};
   margin-top: 16px;
   border-radius: 10px;
-  padding: 32px 24px 0px 24px;
+  padding: 32px 24px 30px 24px;
 `;
 
 const MainInfo = styled.div`
@@ -65,7 +65,7 @@ const MainInfo = styled.div`
   & > div {
     margin-left: 20px;
     & > h3 {
-      color: #2b3442;
+      color: ${(props)=> (props.modeStatus ? "#FFF" : "#2b3442" )};
       font-size: 16px;
       font-weight: 700;
       line-height: 24px;
@@ -76,7 +76,7 @@ const MainInfo = styled.div`
     }
     &>p{
       font-size: 13px;
-      color: #697C9A;
+      color: ${(props) => (props.modeStatus ? "#FFF" : "#697C9A")};
       font-weight: 400;
       margin-top: 6px;
       line-height: 20px;

@@ -50,7 +50,7 @@ const Search = styled.input`
   background-color: ${(props) => (props.modeStatus ? "#1E2A47" : "#FFF")};
   ::placeholder{
     text-align: center;
-    color: ${(props) => (props.modeStatus ? "#FFF" : "#4B6A9B")};
+    color: ${(props) => (props.modeStatus ? "white" : "#4B6A9B")};
     font-size: 13px;
   }
 `;
