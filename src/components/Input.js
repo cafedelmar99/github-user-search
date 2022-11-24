@@ -40,6 +40,11 @@ const InputHolder = styled.div`
     height: 20px;
     margin-left: 16px;
   }
+  @media (min-width: 768px){
+   justify-content: space-between;
+   max-width: 573px;
+   margin: 35px auto 0px auto;
+  }
 `;
 
 const Search = styled.input`
@@ -48,10 +53,18 @@ const Search = styled.input`
   font-weight: 400;
   border: none;
   background-color: ${(props) => (props.modeStatus ? "#1E2A47" : "#FFF")};
+  color: ${(props) => (props.modeStatus ? "white" : "#4B6A9B")};
   ::placeholder{
     text-align: center;
     color: ${(props) => (props.modeStatus ? "white" : "#4B6A9B")};
     font-size: 13px;
+  }
+  @media (min-width: 768px){
+   width: 100%;
+   margin-left: 20px;
+   ::placeholder{
+      text-align: start;
+    }
   }
 `;
 
@@ -65,6 +78,14 @@ const SearchButton = styled.button`
   font-size: 14px;
   font-weight: 700;
   color: #FFF;
+  :hover{
+    background-color: #60ABFF;
+  }
+  @media (min-width: 768px){
+   width: 106px;
+   margin-left: 20px;
+   font-size: 16px;
+  }
 `;
 
 export default Input

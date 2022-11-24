@@ -27,9 +27,10 @@ const StatsHolder = styled.div`
     justify-content: space-evenly;
     background-color: ${(props)=> (props.modeStatus ? "#141D2F" : "#F6F8FF")} ;
     border-radius: 10px;
-    width: 280px;
+    width: 100%;
     height: 85px;
     margin-top: 40px;
+    
 `;
 
 const EachStat = styled.div`
@@ -42,11 +43,19 @@ const EachStat = styled.div`
         font-size: 11px;
         font-weight: 400;
         line-height: 16px;
+        @media (min-width: 768px){
+        font-size: 13px;
+      line-height: 19px;
+  }
     }
     &>p{
        color: ${(props)=> (props.modeStatus ? "#FFF" : "#2B3442")};
        font-size: 16px;
        font-weight: 700;
        line-height: 24px;
+       @media (min-width: 768px){
+        font-size: 22px;
+      line-height: 32px;
+  }
     }
 `;

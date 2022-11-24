@@ -80,7 +80,13 @@ function Socials(props) {
 
 export default Socials;
 
-const SocialsHolder = styled.div``;
+const SocialsHolder = styled.div`
+  @media (min-width: 768px){
+        display: flex;
+        justify-content: space-between;
+        margin-top: 13px;
+  }
+`;
 
 const SocialsHalf = styled.div``;
 
@@ -91,6 +97,13 @@ const SocialsEach = styled.div`
   & > p {
     margin-left: 10px;
     color: ${(props) => (props.modeStatus ? "#FFF" : "#4B6A9B")};
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    @media (min-width: 768px){
+      font-size: 15px;
+    line-height: 22px;
+    }
   }
 `;
 const SocialsLogo = styled.img`

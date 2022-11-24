@@ -10,7 +10,6 @@ function App() {
   const [info, setInfo] = useState({});
 
   return (
-    
     <div className="App">
       <GlobalStyle modeStatus={modeStatus}/>
       <Header modeStatus={modeStatus} setModeStatus={setModeStatus}/>

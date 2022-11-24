@@ -28,6 +28,10 @@ const HeaderHolder = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: ${(props) => (props.modeStatus ? "#141D2F" : "#F6F8FF")};
+  @media (min-width: 768px){
+   max-width: 573px;
+   margin: auto;
+  }
 `;
 
 const Name = styled.h1`
@@ -44,6 +48,9 @@ const Lights = styled.div`
     color: ${(props) => (props.modeStatus ? "#FFF" : "#4B6A9B")};
     margin-right: 16px;
     text-transform: uppercase;
+    :hover{
+      color: ${(props) => (props.modeStatus ? "#90A4D4" : "#222731")};
+    }
   }
   & > svg {
   }
