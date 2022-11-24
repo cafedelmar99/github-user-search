@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from "./components/GlobalStyles";
+import Input from "./components/Input";
+import Header from "./components/Header";
+import Card from "./components/Card";
+import { useState } from "react";
+
 
 function App() {
+  const [modeStatus, setModeStatus]=useState(false);
+  const [info, setInfo] = useState({});
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle modeStatus={modeStatus}/>
+      <Header modeStatus={modeStatus} setModeStatus={setModeStatus}/>
+      <Input modeStatus={modeStatus} info={info} setInfo={setInfo}/>
+      <Card modeStatus={modeStatus} info={info} setInfo={setInfo}/>
     </div>
   );
 }
